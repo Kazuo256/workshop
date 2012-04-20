@@ -1,5 +1,6 @@
 
 require "object"
+
 module("sprite", object.asClass)
 
 -- Image.
