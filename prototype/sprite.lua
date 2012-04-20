@@ -26,6 +26,12 @@ function sprite:centralizeImage()
   self.oy = self.image:getHeight()/2
 end
 
+function sprite:setDimension(w, h)
+  if not self.image then return end
+  self.sx = w/self.image:getWidth()
+  self.sy = h/self.image:getHeight()
+end
+
 function sprite:draw()
   love.graphics.draw(
     self.image,
