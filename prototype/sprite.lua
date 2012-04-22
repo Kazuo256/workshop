@@ -1,45 +1,42 @@
 
 require "object"
+require "vec2"
 
 module("sprite", object.asClass)
 
 -- Image.
 sprite.image = nil
 -- Position
-sprite.x = 0
-sprite.y = 0
+sprite.position = vec2:new {}
 -- Rotation (in radians)
-sprite.r = 0
+sprite.rotation = 0
 -- Size factors.
-sprite.sx = 1
-sprite.sy = 1
+sprite.size = vec2:new { 1, 1 }
 -- Offset
-sprite.ox = 0
-sprite.oy = 0
+sprite.offset = vec2:new { 0, 0 }
 -- Shearing.
-sprite.kx = 0
-sprite.ky = 0
+sprite.shearing = vec2:new { 0, 0 }
 
 function sprite:centralizeImage()
   if not self.image then return end
-  self.ox = self.image:getWidth()/2
-  self.oy = self.image:getHeight()/2
+  self.offset.x = self.image:getWidth()/2
+  self.offset.y = self.image:getHeight()/2
 end
 
 function sprite:setDimension(w, h)
   if not self.image then return end
-  self.sx = w/self.image:getWidth()
-  self.sy = h/self.image:getHeight()
+  self.size.x = w/self.image:getWidth()
+  self.size.y = h/self.image:getHeight()
 end
 
 function sprite:draw()
   love.graphics.draw(
     self.image,
-    self.x, self.y,
-    self.r,
-    self.sx, self.sy,
-    self.ox, self.oy,
-    self.kx, self.ky
+    self.position.x, self.position.y,
+    self.rotation,
+    self.size.x, self.size.y,
+    self.offset.x, self.offset.y,
+    self.shearing.x, self.shearing.y
   )
 end
 
