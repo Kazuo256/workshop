@@ -1,7 +1,8 @@
 
+require "Object"
 require "Vec2"
 
-module("Sprite", object.asClass)
+module("Sprite", Object.asClass)
 
 -- Image.
 Sprite.image = nil

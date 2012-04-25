@@ -1,7 +1,7 @@
 
-require "object"
+require "Object"
 
-module("Vec2", object.asClass)
+module("Vec2", Object.asClass)
 
 -- Vector coordinates.
 Vec2[1] = 0

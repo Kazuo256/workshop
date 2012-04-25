@@ -1,10 +1,10 @@
 
-require "object"
+require "Object"
 require "Sprite"
 
-module("Game", object.asClass)
+module("Game", Object.asClass)
 
-Game.stage = object.table()
+Game.stage = Object.table()
 
 Game.init = love.filesystem.load "init.lua"
 
