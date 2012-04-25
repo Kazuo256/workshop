@@ -9,6 +9,6 @@ local scarab = sprite:new {
 
 scarab.image = love.graphics.newImage "data/scarab.png"
 scarab:centralizeImage()
-game.sprites:insert(scarab)
+game.stage:insert(scarab)
 
 
