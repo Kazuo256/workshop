@@ -5,6 +5,7 @@ function Object:new (t)
   t = t or {}
   setmetatable(t, self)
   self.__index = rawget(self, "__index") or self
+  if self.init then self.init(t) end
   return t
 end
 
