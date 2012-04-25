@@ -1,5 +1,4 @@
 
-require "object"
 require "vec2"
 
 module("sprite", object.asClass)
@@ -12,6 +11,8 @@ sprite.position = vec2:new {}
 sprite.rotation = 0
 -- Size factors.
 sprite.size = vec2:new { 1, 1 }
+-- Dimension.
+sprite.dimension = vec2:new { 0, 0 }
 -- Offset
 sprite.offset = vec2:new { 0, 0 }
 -- Shearing.
@@ -30,11 +31,12 @@ function sprite:setDimension(w, h)
 end
 
 function sprite:draw()
+  local w, h = self.image:getWidth(), self.image:getHeight()
   love.graphics.draw(
     self.image,
     self.position.x, self.position.y,
     self.rotation,
-    self.size.x, self.size.y,
+    self.size.x*self.dimension.x/w, self.size.y*self.dimension.y/h,
     self.offset.x, self.offset.y,
     self.shearing.x, self.shearing.y
   )
