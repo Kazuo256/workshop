@@ -33,6 +33,7 @@ function Sprite.create (name)
   setfenv(loader, env)
   local check, err = pcall(loader)
   if not check then
+    print("Could not create sprite '"..name.."'.")
     print(err)
     return nil
   end

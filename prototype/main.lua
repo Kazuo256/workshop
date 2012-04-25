@@ -1,8 +1,8 @@
 
-require "game"
+require "Game"
 
 function love.load()
-  game.init()
+  Game.init()
 end
 
 function love.update(dt)
@@ -10,6 +10,6 @@ function love.update(dt)
 end
 
 function love.draw()
-  game:draw()
+  Game:draw()
 end
 
