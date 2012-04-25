@@ -1,14 +1,10 @@
 
-require "sprite"
+require "Sprite"
 require "vec2"
 
-local scarab = sprite:new {
-  position = vec2:new { 400, 300 },
-  dimension = vec2:new { 100, 100 }
-}
+local scarab = Sprite.create "scarab"
 
-scarab.image = love.graphics.newImage "data/scarab.png"
-scarab:centralizeImage()
+scarab.position = vec2:new { 400, 300 }
 game.stage:insert(scarab)
 
 

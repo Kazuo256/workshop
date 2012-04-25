@@ -1,6 +1,6 @@
 
 require "object"
-require "sprite"
+require "Sprite"
 
 module("game", object.asClass)
 
