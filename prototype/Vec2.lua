@@ -25,6 +25,11 @@ function Vec2.__add (lhs, rhs)
   }
 end
 
+function Vec2:set (x, y)
+  self[1] = x
+  self[2] = y
+end
+
 function Vec2:add (v)
   self[1] = self[1] + v[1]
   self[2] = self[2] + v[2]
