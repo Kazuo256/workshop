@@ -1,22 +1,22 @@
 
-require "vec2"
+require "Vec2"
 
 module("Sprite", object.asClass)
 
 -- Image.
 Sprite.image = nil
 -- Position
-Sprite.position = vec2:new {}
+Sprite.position = Vec2:new {}
 -- Rotation (in radians)
 Sprite.rotation = 0
 -- Size factors.
-Sprite.size = vec2:new { 1, 1 }
+Sprite.size = Vec2:new { 1, 1 }
 -- Dimension.
-Sprite.dimension = vec2:new { 0, 0 }
+Sprite.dimension = Vec2:new { 0, 0 }
 -- Offset
-Sprite.offset = vec2:new { 0, 0 }
+Sprite.offset = Vec2:new { 0, 0 }
 -- Shearing.
-Sprite.shearing = vec2:new { 0, 0 }
+Sprite.shearing = Vec2:new { 0, 0 }
 
 local loaded_sprites = {}
 

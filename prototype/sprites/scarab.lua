@@ -1,7 +1,7 @@
 
-require "vec2"
+require "Vec2"
 
 scarab.image = love.graphics.newImage "data/scarab.png"
-scarab.dimension = vec2:new { 100, 100 }
+scarab.dimension = Vec2:new { 100, 100 }
 scarab:centralizeImage()
 
