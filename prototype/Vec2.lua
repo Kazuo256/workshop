@@ -10,6 +10,7 @@ Vec2[2] = 0
 function Vec2:__index (k)
   if k == "x" then return self[1] end
   if k == "y" then return self[2] end
+  return getmetatable(self)[k]
 end
 
 function Vec2:__newindex (k, v)

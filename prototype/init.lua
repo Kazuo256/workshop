@@ -12,7 +12,11 @@ local time = 0
 
 function scarab:moveTask(dt)
   time = time + dt
-  self.sprite.position = center + Vec2:new { 100*math.cos(time), 100*math.sin(time) }
+  self.sprite.position:set(
+    center.x + 100*math.cos(time),
+    center.y + 100*math.sin(time)
+  )
+  self.sprite.rotation = -math.pi/2+time
 end
 
 scarab.tasks:insert(scarab.moveTask)

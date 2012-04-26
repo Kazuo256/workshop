@@ -7,17 +7,25 @@ module("Sprite", Object.asClass)
 -- Image.
 Sprite.image = nil
 -- Position
-Sprite.position = Vec2:new {}
+Sprite.position = nil
 -- Rotation (in radians)
 Sprite.rotation = 0
 -- Size factors.
-Sprite.size = Vec2:new { 1, 1 }
+Sprite.size = nil
 -- Dimension.
-Sprite.dimension = Vec2:new { 0, 0 }
+Sprite.dimension = nil
 -- Offset
-Sprite.offset = Vec2:new { 0, 0 }
+Sprite.offset = nil
 -- Shearing.
-Sprite.shearing = Vec2:new { 0, 0 }
+Sprite.shearing = nil
+
+function Sprite:init ()
+  self.position = Vec2:new {}
+  self.size = Vec2:new { 1, 1 }
+  self.dimension = Vec2:new { 0, 0 }
+  self.offset = Vec2:new { 0, 0 }
+  self.shearing = Vec2:new { 0, 0 }
+end
 
 local loaded_sprites = {}
 
