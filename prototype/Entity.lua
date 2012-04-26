@@ -10,7 +10,7 @@ end
 
 function Entity:update (dt)
   for k,v in pairs(self.tasks) do
-    if v(self, dt) then
+    if not v(self, dt) then
       self.tasks[k] = nil
     end
   end

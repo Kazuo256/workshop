@@ -6,7 +6,14 @@ module("Game", Object.asClass)
 
 Game.stage = {
   sprites = Object.table(),
-  entities = Object.table()
+  entities = Object.table(),
+}
+
+Game.input = {
+  key = {
+    pressed = Object.table(),
+    released = Object.table()
+  }
 }
 
 Game.init = love.filesystem.load "init.lua"
