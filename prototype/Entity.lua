@@ -9,8 +9,10 @@ function Entity:init ()
 end
 
 function Entity:update (dt)
-  for _,v in ipairs(self.tasks) do
-    v(self, dt)
+  for k,v in pairs(self.tasks) do
+    if v(self, dt) then
+      self.tasks[k] = nil
+    end
   end
 end
 
