@@ -26,6 +26,23 @@ function Vec2.__add (lhs, rhs)
   }
 end
 
+function Vec2.__sub (lhs, rhs)
+  return Vec2:new {
+    lhs[1] - rhs[1],
+    lhs[2] - rhs[2]
+  }
+end
+
+function Vec2.__mul (lhs, rhs)
+  if type(lhs) == "number" then
+    return Vec2:new { lhs*rhs.x, lhs*rhs.y }
+  elseif type(rhs) == "number" then
+    return Vec2:new { rhs*lhs.x, rhs*lhs.y }
+  else
+    return lhs.x*rhs.x + lhs.y*rhs.y
+  end
+end
+
 function Vec2:set (x, y)
   self[1] = x
   self[2] = y
@@ -34,5 +51,10 @@ end
 function Vec2:add (v)
   self[1] = self[1] + v[1]
   self[2] = self[2] + v[2]
+end
+
+function Vec2:sub (v)
+  self[1] = self[1] - v[1]
+  self[2] = self[2] - v[2]
 end
 
